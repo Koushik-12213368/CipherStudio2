@@ -9,7 +9,13 @@ const connectDB = async () => {
       return;
     }
     
-    const conn = await mongoose.connect(mongoURI, {
+    // Ensure the URI is properly formatted
+    let formattedURI = mongoURI;
+    if (!formattedURI.includes('retryWrites=true')) {
+      formattedURI += (formattedURI.includes('?') ? '&' : '?') + 'retryWrites=true&w=majority';
+    }
+    
+    const conn = await mongoose.connect(formattedURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

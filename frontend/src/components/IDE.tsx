@@ -4,7 +4,6 @@ import { useProject } from '../contexts/ProjectContext';
 import { useTheme } from '../contexts/ThemeContext';
 import MonacoEditor from '@monaco-editor/react';
 import { Sandpack } from '@codesandbox/sandpack-react';
-import { themes } from '@codesandbox/sandpack-themes';
 import { 
   Save, 
   FolderPlus, 
@@ -257,7 +256,7 @@ const IDE: React.FC = () => {
                 <Sandpack
                   template="react-ts"
                   files={sandpackFiles}
-                  theme={theme === 'dark' ? themes.dark : themes.light}
+                  theme={theme === 'dark' ? 'dark' : 'light'}
                   options={{
                     showNavigator: false,
                     showRefreshButton: true,

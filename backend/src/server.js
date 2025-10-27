@@ -6,7 +6,7 @@ const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
-const connectDB = require('./src/utils/database');
+const connectDB = require('./utils/database');
 const projectRoutes = require('./src/routes/projects');
 const errorHandler = require('./src/middleware/errorHandler');
 

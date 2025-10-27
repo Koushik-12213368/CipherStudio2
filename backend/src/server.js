@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const connectDB = require('./utils/database');
 const projectRoutes = require('./routes/projects');
-const errorHandler = require('./src/middleware/errorHandler');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
